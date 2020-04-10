@@ -16,10 +16,10 @@ namespace RiznykHomework3.PageObject
         
         }
 
-        public void SigningIn()
+        public void SigningIn(string testEmail, string testPassword)
         {
-            driver.FindElement(email).SendKeys(text: "serjant1212@gmail.com");
-            driver.FindElement(password).SendKeys(text: "testpass");
+            driver.FindElement(email).SendKeys(text: testEmail);
+            driver.FindElement(password).SendKeys(text: testPassword);
             driver.FindElement(loginingbutt).Click();
         }
     }
