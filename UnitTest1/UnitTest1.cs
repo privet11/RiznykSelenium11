@@ -23,12 +23,12 @@ namespace RiznykHomework3
         {
         }
 
-        [Test]
-        public void SignInTest()
+        [TestCase("serjant1212@gmail.com", "testpass")]
+        public void SignInTest(string testEmail, string testPassword)
         {
             MainHeader header = new MainHeader(driver);
             LoginPage signInPage = header.ClickOnSignIn();
-            signInPage.SigningIn();
+            signInPage.SigningIn(testEmail, testPassword);
 
             Assert.Pass();
         }
@@ -36,9 +36,9 @@ namespace RiznykHomework3
         [Test] 
         public void PurchaseTest()
         {
-            driver.FindElement(By.ClassName("sf-with-ul")).Click();
-            driver.FindElement(By.XPath("//*[@id='subcategories']/ul/li[1]/div[1]/a/img")).Click();
-            driver.FindElement(By.ClassName("icon-th-list")).Click();
+            MainHeader header = new MainHeader(driver);
+            PurchasePage purchPage = header.ClickOnWoman();
+            purchPage.TopsViewing();
         
             Assert.Pass();
         }
